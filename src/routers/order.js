@@ -30,11 +30,11 @@ router.post('/order/new', async (req,res) => {
 
 //show all accepted and delivered orders
 router.get('/order/yayd', async(req,res) => {
-    if(req.session.user.mobile !== process.env.ADMIN_NAME){
-        return res.send({
-            "message" : "not authorized"
-        })
-    }
+    // if(req.session.user.mobile !== process.env.ADMIN_NAME){
+    //     return res.send({
+    //         "message" : "not authorized"
+    //     })
+    // }
         try{
             var orders = []
             orders = await Order.find({accepted:true, delivered:true})
@@ -52,11 +52,11 @@ router.get('/order/yayd', async(req,res) => {
 router.get('/order/yand', async(req,res) => {
     // if(req.session.user.mobile === ADMIN_NAME){
 
-        if(req.session.user.mobile !== process.env.ADMIN_NAME){
-            return res.send({
-                "message" : "not authorized"
-            })
-        }
+        // if(req.session.user.mobile !== process.env.ADMIN_NAME){
+        //     return res.send({
+        //         "message" : "not authorized"
+        //     })
+        // }
 
         try{
             var orders = []
@@ -74,11 +74,11 @@ router.get('/order/yand', async(req,res) => {
 //show not accepted not delivered
 router.get('/order/nand', async(req,res) => {
     // if(req.session.user.mobile === ADMIN_NAME){
-        if(req.session.user.mobile !== process.env.ADMIN_NAME){
-            return res.send({
-                "message" : "not authorized"
-            })
-        }
+        // if(req.session.user.mobile !== process.env.ADMIN_NAME){
+        //     return res.send({
+        //         "message" : "not authorized"
+        //     })
+        // }
 
         try{
             var orders = []
