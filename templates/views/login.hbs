@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    {{!-- <meta charset="UTF-8"> --}}
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    {{!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> --}}
+    <title>Login</title>
+    
+</head>
+
+<body>
+    <div class="main-content"></div>
+    {{>header}}
+
+    <p id="showMessage"></p>
+
+    <form id="login-form">
+        <div class="form-group">
+            <label for="inputMobile">Mobile Number</label>
+            <input required minlength="10" maxlength="10" type="number" class="form-control" id="inputMobile" 
+                placeholder="Enter mobile number" required>
+            {{!-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> --}}
+        </div>
+        <div class="form-group">
+            <label for="inputPassword">Password</label>
+            <input required type="password" class="form-control" id="inputPassword" placeholder="Password" required>
+        </div>
+        <button type="submit" class="btn btn-primary">Login</button>
+    </form>
+
+    <p>New User? Create an account first <a href="/signup" >here</a></p>
+    {{!-- <a href="signup" class="btn btn-primary btn-lg" role="button" aria-disabled="true">Signup</a> --}}
+    </div>
+    {{>footer}}
+
+    <script src="/public/js/header.js"></script>
+    <script src="/public/js/login.js"></script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
+

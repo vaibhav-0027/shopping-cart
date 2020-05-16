@@ -1,0 +1,54 @@
+{{!-- <style>
+  .header{
+    position: fixed;
+    background-color:rgb(246, 209, 204);
+  }
+</style> --}}
+
+<header>
+
+  <nav class="navbar navbar-expand-lg navbar-light bg-light navbar-fixed-top" style='background-color:rgb(246, 209, 204);'>
+    <a class="navbar-brand" href="home">Brand image</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item active">
+          <a class="nav-link" href="/home">Home <span class="sr-only">
+            {{!-- (current) --}}
+            </span></a>
+        </li>
+        <li class="nav-item" id="aboutHeader">
+          <a class="nav-link" href="/about">About</a>
+        </li>
+        <li class="nav-item" id="contactHeader">
+          <a class="nav-link" href="/contact">Contact Us</a>
+        </li>
+
+        <li class="nav-item" id="usersHeader">
+          <a class="nav-link" href="/users">Users</a>
+        </li>
+        <li class="nav-item" id="ordersHeader">
+          <a class="nav-link" href="/orders">Orders</a>
+        </li>
+        <li class="nav-item" id="productsHeader">
+          <a class="nav-link" href="/products">Products</a>
+        </li>
+
+        <li class="nav-item">
+          <a id="loginButton" style="margin-right: 10px;" class="nav-link" href="/login">Login</a>
+        </li>
+
+        <li class="nav-item">
+          <a id="dashboardButton" style="margin-right: 0px;" class="nav-link" href="/dashboard">Hey, {{name}}</a>
+        </li>
+        <li class="nav-item">
+          <a id="logoutButton" style="margin-right: 0px;" class="nav-link" href="#">Logout</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+</header>
