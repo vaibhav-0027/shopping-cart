@@ -153,11 +153,12 @@ router.get('/users/all', async (req,res) => {
     // if(req.session.user !== 'null'){
     //     if(req.session.user.name === 'admin'){
 
-    if(req.session.user.mobile === process.env.ADMIN_NAME){
+    if(req.session.user.mobile !== process.env.ADMIN_NAME){
         return res.send({
             "message" : "not authorized"
         })
     }
+
             try{
                 var users = []
                 users = await User.find({  })

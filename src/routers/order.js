@@ -30,7 +30,11 @@ router.post('/order/new', async (req,res) => {
 
 //show all accepted and delivered orders
 router.get('/order/yayd', async(req,res) => {
-    if(req.session.user.mobile === process.env.ADMIN_NAME){
+    if(req.session.user.mobile !== process.env.ADMIN_NAME){
+        return res.send({
+            "message" : "not authorized"
+        })
+    }
         try{
             var orders = []
             orders = await Order.find({accepted:true, delivered:true})
@@ -39,14 +43,21 @@ router.get('/order/yayd', async(req,res) => {
         } catch(e) {
             res.status(400).send(e)
         }
-    } else {
-        res.send({'message':'not authorized'})
-    }
+    // } else {
+    //     res.send({'message':'not authorized'})
+    // }
 })
 
 //orders accepted but not delivered
 router.get('/order/yand', async(req,res) => {
-    if(req.session.user.mobile === ADMIN_NAME){
+    // if(req.session.user.mobile === ADMIN_NAME){
+
+        if(req.session.user.mobile !== process.env.ADMIN_NAME){
+            return res.send({
+                "message" : "not authorized"
+            })
+        }
+
         try{
             var orders = []
             orders = await Order.find({accepted:true, delivered:false})
@@ -55,14 +66,20 @@ router.get('/order/yand', async(req,res) => {
         } catch(e) {
             res.status(400).send(e)
         }
-    } else {
-        res.send({'message':'not authorized'})
-    }
+    // } else {
+    //     res.send({'message':'not authorized'})
+    // }
 })
 
 //show not accepted not delivered
 router.get('/order/nand', async(req,res) => {
-    if(req.session.user.mobile === ADMIN_NAME){
+    // if(req.session.user.mobile === ADMIN_NAME){
+        if(req.session.user.mobile !== process.env.ADMIN_NAME){
+            return res.send({
+                "message" : "not authorized"
+            })
+        }
+
         try{
             var orders = []
             orders = await Order.find({accepted:false, delivered:false})
@@ -71,9 +88,9 @@ router.get('/order/nand', async(req,res) => {
         } catch(e) {
             res.status(400).send(e)
         }
-    } else {
-        res.send({'message':'not authorized'})
-    }
+    // } else {
+    //     res.send({'message':'not authorized'})
+    // }
 })
 
 //Showing all orders of current user
